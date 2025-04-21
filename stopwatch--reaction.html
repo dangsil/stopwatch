@@ -14,6 +14,25 @@
             margin: 0;
             background-color: #f0f0f0;
         }
+        #introModal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 999;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #introModal p {
+            font-size: 20px;
+            max-width: 600px;
+            line-height: 1.5;
+        }
         #timer {
             font-size: 2rem;
             padding: 20px;
@@ -24,7 +43,21 @@
     </style>
 </head>
 <body>
+    <!-- Instruction Modal -->
+    <div id="introModal">
+        <p>
+            Welcome to the Reaction Timer Test!<br><br>
+            You will begin with a practice round.<br><br>
+            When you're ready, press and hold the <strong>spacebar</strong>.<br>
+            Wait for the "Now!" prompt to appear, then <strong>release and press space again</strong> as quickly as you can.<br><br>
+            After the practice, you'll complete 10 official attempts.<br>
+            At the end, your <strong>average reaction time</strong> will be shown.<br><br>
+            Click OK to begin.
+        </p>
+        <button id="okButton">OK</button>
+    </div>
 
+    
     <div id="timer">0.00</div>
 
     <script>

@@ -33,6 +33,11 @@
             max-width: 600px;
             line-height: 1.5;
         }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
         #timer {
             font-size: 2rem;
             padding: 20px;
@@ -78,6 +83,18 @@
         let resetTimeout;
         let spacePressed = false;
 
+        // Show instructions modal on page load
+        window.onload = () => {
+            introModal.style.display = 'flex';
+        };
+
+        // Hide modal and show message
+        okButton.addEventListener('click', () => {
+            introModal.style.display = 'none';
+            message.textContent = "Press Start for your practice try";
+        });
+
+        
         const timerElement = document.getElementById("timer");
 
         function startTimer() {
